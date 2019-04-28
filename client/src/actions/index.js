@@ -16,7 +16,7 @@ export const handleToken = token => async dispatch => {
 
 export const submitBlog = (values, file, history) => async dispatch => {
   const {data} = await axios.get('/api/upload')
-  const upload = await axios.put(data.url,file,{
+  await axios.put(data.url,file,{
     headers:{
       'Content-Type' : (file) && file.type
     }

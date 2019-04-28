@@ -13,6 +13,7 @@ export const handleToken = token => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
+
 export const submitBlog = (values, file, history) => async dispatch => {
   const {data} = await axios.get('/api/upload')
   const upload = await axios.put(data.url,file,{
@@ -20,7 +21,6 @@ export const submitBlog = (values, file, history) => async dispatch => {
       'Content-Type' : (file) && file.type
     }
   })
-
 
 
 console.log(data.Key)

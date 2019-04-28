@@ -10,6 +10,7 @@ class BlogShow extends Component {
   renderImage() {
     if (this.props.blog.imageUrl) {
       return <img 
+        alt={this.props.match.params._id}
       width='300px'
       src={`https://s3.eu-central-1.amazonaws.com/blogs-bucket-shalom-dev/${this.props.blog.imageUrl}`} />
     }
